@@ -31,7 +31,7 @@ Let's consider we have a sample data with X~1~, X~2~ and Y. Following is the plo
    - **Note:** This step/node is called the parent node. It is not counted as part of tree depth, a measure of tree size.
 
 1. Now, the model makes another split under the False condition of previous decision/node, but this time it splits on `X~2~` at `170` with decision being `X~2~<170`. Now observe that the split was done on the `False`/`No` end of previous decision, therefore the split on the chart is only on `X~1~>=20` side:
-   ![Split 2 Chart](.media/Split-2.png)
+   ![Split 2 Chart](.media/split-2.png)
    - The current step will get much clearer when you'll look at the following tree progress of split 2:
    ![Split 2 Tree](.media/sample-decision-tree-split-2.png)
 
