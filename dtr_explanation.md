@@ -31,19 +31,19 @@ Let's consider we have a sample data with X~1~, X~2~ and Y. Following is the plo
    - **Note:** This step/node is called the parent node. It is not counted as part of tree depth, a measure of tree size.
 
 1. Now, the model makes another split under the False condition of previous decision/node, but this time it splits on `X~2~` at `170` with decision being `X~2~<170`. Now observe that the split was done on the `False`/`No` end of previous decision, therefore the split on the chart is only on `X~1~>=20` side:
-   ![Split 2 Chart](.media/split-2.png)
+  ![Split 2 Chart](.media/split-2.png)
    - The current step will get much clearer when you'll look at the following tree progress of split 2:
-   ![Split 2 Tree](.media/sample-decision-tree-split-2.png)
+  ![Split 2 Tree](.media/sample-decision-tree-split-2.png)
 
 2. Similarly, the next split is again on `X~2~` at 200 (`X~2~<200`) **but** this time it is done on `True`/`Yes` end of the split 1, which means on `X~1~<20` side. Check the chart and tree below for more clarity:
-   ![Split 3 Chart](.media/split-3.png)
+  ![Split 3 Chart](.media/split-3.png)
    - After the 3rd split, the tree updates accordingly:
-   ![Split 3 Tree](.media/sample-decision-tree-split-3.png)
+  ![Split 3 Tree](.media/sample-decision-tree-split-3.png)
 
 3. Now, The 4th split is done on `X~1~` at `40` (`X~1~<40`) under `True`/`Yes` side of split 2, which is `X~2~<170` side.
-   ![Split 4 Chart](.media/split-4.png)
+  ![Split 4 Chart](.media/split-4.png)
    - Now, the last node is filled in our tree:
-   ![Split 4 Tree](.media/sample-decision-tree-split-4.png)
+  ![Split 4 Tree](.media/sample-decision-tree-split-4.png)
 
 4. Let's come to the `Y` variable that we put aside earlier. Now that all nodes are complete, we come to the leaves of the tree. To predict new `Y` values, the average is calculated of `Y` values in every split of `X~1~` and `X~2~`, and `Y` average of each split is the predicted y value of that split. For simplicity, we'll visualize the Y-axis on the same 2D chart:
   ![3D Split Chart](.media/3d-y_axis.png)
