@@ -18,7 +18,7 @@ y = dataset.iloc[:,-1].values      # Petrol consumption
 from sklearn.tree import DecisionTreeRegressor, plot_tree
 
 # We train our model DecisionTreeRegressor class and fit method
-regressor = DecisionTreeRegressor(random_state=0, max_depth=5)  # random_state adds a dash of randomness to how the decision tree is built, but it doesn't significantly affect the final predictions
+regressor = DecisionTreeRegressor(random_state=0, max_depth=5)  # random_state adds a dash of randomness to how the decision tree is built, but it doesn't significantly affect the final predictions (randomness and number are inversely proportional)
                                                                 # max_depth simply decides how tall the tree will be generated. The number of levels are excluding the parent level/node
                                                                 # For more parameters explore: https://scikit-learn.org/stable/modules/generated/sklearn.tree.DecisionTreeRegressor.html
 regressor.fit(X,y)
@@ -34,8 +34,8 @@ predict(regressor, [[15, 5500]])    # petrol_tax, average_income
 
 #### Visualization
 # The following code snippet visualizes the decision tree showing the tree's branches and nodes/leaves
-plt.figure(figsize=(25,18))
-plot_tree(regressor, fontsize=9, max_depth=3)
+plt.figure(figsize=(25,18))        # Define image size
+plot_tree(regressor, fontsize=9)   # Plot the tree with plot_tree method and provide the model as input and set font size
 plt.show()
 
 # If the model is trained on just 2 variables (1 dependent and 1 independent), then we'll be able to build a 2-D chart with the below given code snippet

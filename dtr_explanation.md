@@ -61,6 +61,7 @@ Let's consider we have a sample data with X~1~, X~2~ and Y. Following is the plo
 - Based on these splits and the resulting distribution of petrol consumption within each leaf node, the model would learn to predict petrol consumption for new data points based on their petrol tax and average income.
 - Unfortunately, the actual visualization of the decision tree in sklearn is not as pretty as the previous shown charts and visualizations. You'll get something like this:
   ![Decision Tree](.media/decision-tree.png)
+- 
 
 ## Key Points to Remember:
 - Decision trees can be prone to overfitting if not carefully grown. Techniques like pruning (removing unnecessary branches) or setting a maximum tree depth can help prevent this.
