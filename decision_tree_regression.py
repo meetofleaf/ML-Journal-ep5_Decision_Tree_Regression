@@ -18,7 +18,7 @@ y = dataset.iloc[:,-1].values      # Petrol consumption
 from sklearn.tree import DecisionTreeRegressor, plot_tree
 
 # We train our model DecisionTreeRegressor class and fit method
-regressor = DecisionTreeRegressor(random_state=0, max_depth=5)  # random_state adds a dash of randomness to how the decision tree is built, but it doesn't significantly affect the final predictions (randomness and number are inversely proportional)
+regressor = DecisionTreeRegressor(random_state=0, max_depth=5)  # random_state adds a dash of randomness to how the decision tree is built, but it doesn't significantly affect the final predictions (variable value and randomness are inversely proportional)
                                                                 # max_depth simply decides how tall the tree will be generated. The number of levels are excluding the parent level/node
                                                                 # For more parameters explore: https://scikit-learn.org/stable/modules/generated/sklearn.tree.DecisionTreeRegressor.html
 regressor.fit(X,y)
@@ -50,3 +50,22 @@ plt.show()
 '''
 
 
+# Visualizing 3 variable model on 2D chart using one average_income value
+petrol_tax_range = np.arange(min(X[:, 0]), max(X[:, 0]), 0.1)  # range of petrol tax values
+average_income = 5500  # constant average income for visualization
+
+# Make predictions for each petrol tax value in the range
+predictions = regressor.predict(np.column_stack((petrol_tax_range, np.full_like(petrol_tax_range, average_income))))
+
+# Plot the original data points
+plt.scatter(X[:, 0], y, color='red', label='Original data')
+
+# Plot the predictions against petrol tax
+plt.plot(petrol_tax_range, predictions, color='blue', label='Decision Tree Regression')
+
+# Add labels and legend
+plt.title('Decision Tree Regression')
+plt.xlabel('Petrol Tax')
+plt.ylabel('Petrol Consumption')
+plt.legend()
+plt.show()
